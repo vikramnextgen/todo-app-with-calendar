@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App with Calendar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Todo App</h1>
+        </header>
+        
+        <div class="app-container">
+            <!-- Calendar Section -->
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prev-month-btn"><i class="fas fa-chevron-left"></i></button>
+                    <h2 id="current-month">August 2023</h2>
+                    <button id="next-month-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="calendar-weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                
+                <div class="calendar-days" id="calendar-days">
+                    <!-- Calendar days will be generated dynamically -->
+                </div>
+            </div>
+            
+            <!-- Todo List Section -->
+            <div class="todo-container">
+                <div class="selected-date" id="selected-date">
+                    <span>Today's Tasks</span>
+                </div>
+                
+                <form id="todo-form">
+                    <input type="text" id="todo-input" placeholder="Add a new task..." autocomplete="off">
+                    <button type="submit" id="add-button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </form>
+                
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                
+                <ul id="todo-list">
+                    <!-- Todo items will be added here dynamically -->
+                </ul>
+                
+                <div class="todo-footer">
+                    <span id="items-left">0 items left</span>
+                    <button id="clear-completed">Clear Completed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Adding Todo with Date -->
+    <div class="modal" id="todo-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add Task for <span id="modal-date"></span></h3>
+            <form id="modal-todo-form">
+                <input type="text" id="modal-todo-input" placeholder="Enter task description...">
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
